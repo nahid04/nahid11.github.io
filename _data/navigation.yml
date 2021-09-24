@@ -1,0 +1,12 @@
+- name: Home
+  link: /
+  icon: fas fa-home
+- name: Projects
+  link: /projects.html
+  icon: fas fa-project-diagram
+- name: Topics
+  link: /topics.html
+  icon: fas fas fa-list
+- name: Publications
+  link: /publications.html
+  icon: fas fa-graduation-cap
