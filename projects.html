@@ -1,0 +1,32 @@
+---
+layout: default
+title: Research Projects
+motto: कर्मण्येवाधिकारस्ते मा फलेषु कदाचन । मा कर्मफलहेतुर्भुर्मा ते संगोऽस्त्वकर्मणि ||
+translation: To work, you have the right, but not to the fruits thereof. Let not the fruits of your labor be your motive, and may you never be without work.
+news: false
+scholar: false
+headerlink: home
+---
+{% assign imagepath = "assets/images/projects" %}
+{% assign linkpath = "projects" %}
+{% assign items = site.projects | sort: 'year' %}
+<section id="one" class="wrapper style1">
+  <div class="inner">
+  {% for item in items reversed%}
+    {% assign pid = item.id | split:"/" | last %}
+    {% capture thecycle %}{% cycle 'left', 'right' %}{% endcapture %}
+    <article class="feature {{ pid }} {{ thecycle }} itemDetailsContainer">
+      <span class="image {{ pid }}">
+        <img class="{{ pid }}" src="{{ imagepath }}/small_{{ pid }}.png" />
+        <img class="hidden {{ pid }}" src="{{ imagepath }}/{{ pid }}.png" onload="upgradeImage(this)" />
+      </span>
+      <div class="content {{ pid }}">
+        <h2>{{ item.title }}</h2>
+        <p class="shortItemText {{ pid }}">{{ item.description }}</p>
+        <p>{{ item.sponsor }} {{ item.award }} ({{ item.status }})</p>
+        <a class="{{ pid }}" href="{{ linkpath }}/{{ pid }}.html">Details and publications</a>
+      </div>
+    </article>
+  {% endfor %}
+  </div>
+</section>

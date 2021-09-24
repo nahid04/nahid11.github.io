@@ -1,0 +1,46 @@
+---
+layout: default
+title: Publications
+motto: न चोरहार्य न राजहार्य न भ्रातृभाज्यं न च भारकारि | व्यये कृते वर्धत एव नित्यं विद्याधनं सर्वधनप्रधानम् ||
+translation: Knowledge can neither be stolen by a thief, nor be confiscated by the Government; it is indivisible among siblings when passed on, and the more you share it, the more it grows. Indubitably, wealth in the form of knowledge is the foremost among all forms of wealth.
+news: false
+subtitle: scholar
+headerlink: home
+---
+<!-- One -->
+<div class="contentWrapper">
+  <div id="includedContent" class="container">{% include scc.html %}</div>
+  <div class="searchContainer">
+    <form action="" id="quicksearch">
+      <input type="text" id="qs_field" autocomplete="off" placeholder="Search..." />
+      <button class="alt" type="button" id="toggleSettings" title="Settings">
+        <i class="fas fa-cog" title="show settings"></i>
+      </button>
+      <div class="select-wrapper">
+        <select id = "groupSelector" >
+          <option selected="selected">Group By</option>
+          <option value="workAuthor">Author</option>
+          <option value="entryType">Type</option>
+          <option value="workYear">Year</option>
+          <option value="topicKeywords">Topic</option>
+        </select>
+      </div>
+      <div id="settings" class="initiallyHidden">
+        <input type="checkbox" id="opt_useRegExp" >
+        <label for="opt_useRegExp" class="search_setting">
+          <font style="vertical-align: inherit;">
+            RegExp
+          </font>
+        </label>
+        <input type="checkbox" checked="checked" class="hidden" id="opt_noAccents" >
+        <label for="opt_noAccents" class="search_setting">
+          <font style="vertical-align: inherit;">
+            Ignore Accents
+          </font>
+        </label>
+      </div>
+    </form>
+  </div>
+</div>
+<script src="assets/js/sccQuickSearch.js"></script>
+<script src="assets/js/sccBibliographyGenerator.js"></script>

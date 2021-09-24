@@ -1,0 +1,31 @@
+---
+layout: default
+title: Research Topics
+motto: अन्नदानं परं दानं विद्यादानं अतः परम् । अन्नेन क्षणिका तृप्तिः यावज्जीवं च विद्यया ॥
+translation: Sharing food is a great deed, but sharing knowledge is even better; the satisfaction obtained from food is momentary, but that obtained from knowledge lasts a lifetime.
+news: false
+scholar: false
+headerlink: home
+---
+{% assign imagepath = "assets/images/topics" %}
+{% assign linkpath = "topics" %}
+{% assign items = site.topics | sort: 'weight' %}
+<section id="one" class="wrapper style1">
+  <div class="inner">
+  {% for item in items reversed %}
+    {% assign pid = item.id | split:"/" | last %}
+    {% capture thecycle %}{% cycle 'left', 'right' %}{% endcapture %}
+    <article class="feature {{ pid }} {{ thecycle }} itemDetailsContainer">
+      <span class="image {{ pid }}">
+        <img class="{{ pid }}" src="{{ imagepath }}/small_{{ pid }}.png" />
+        <img class="hidden {{ pid }}" src="{{ imagepath }}/{{ pid }}.png" onload="upgradeImage(this)" />
+      </span>
+      <div class="content {{ pid }}">
+        <h2>{{ item.title }}</h2>
+        <p class="shortItemText {{ pid }}">{{ item.description }}</p>
+        <a class="{{ pid }}" href="{{ linkpath }}/{{ pid }}.html">Details and publications</a>
+      </div>
+    </article>
+  {% endfor %}
+  </div>
+</section>
