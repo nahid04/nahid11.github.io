@@ -1,0 +1,35 @@
+---
+layout: default
+headerlink: projects
+base: ../
+banner: simple
+---
+{% assign pid = page.id | split:"/" | last %}
+<!-- Placeholder for publications -->
+<div class="hidden" id="includedContent">
+  {% include scc.html %}
+</div>
+
+<!-- Main -->
+<section id="main" class="wrapper">
+  <div class="container">
+    <div class="content">
+      <p class="fullItemText">{{ page.content | markdownify }}</p>
+      <h3>Publications:</h3>
+      <div class="itemPublications topicKeyword">
+        <p id="filterName" class="hidden">{{ pid }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="assets/js/sccBibliographyGenerator.js"></script>
+<script type="text/javascript">
+  window.addEventListener('load', (event) => {
+    <!-- document.getElementById("banner").style.backgroundImage = "url('assets/images/overlay.png'), url('assets/images/projects/{{ pid }}.png')"; -->
+    var bannerImg = document.createElement('style')
+    var content = document.createTextNode("#banner::before { background-image: url('assets/images/overlay.png'), url('assets/images/projects/{{ pid }}.png'); }");
+    bannerImg.appendChild(content);
+    document.getElementsByTagName('head')[0].appendChild(bannerImg);
+  }, false);
+</script>
